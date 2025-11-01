@@ -3,25 +3,16 @@ import time
 import socketio
 from aiohttp import web
 from typing import Any, Dict
-
-
-#from model import DQN
 from game import Game
 
-sio = socketio.AsyncServer(cors_allowed_origins="*")
-app = web.Application()
-sio.attach(app)
+#ALLOWED_ORIGINS = ["http://localhost:3000/"]
 
-
-# TODO: Create a SocketIO server instance with CORS settings to allow connections from frontend
-# Example: sio = socketio.AsyncServer(cors_allowed_origins="*")
-
-# TODO: Create a web application instance
-# Example: app = web.Application()
-
-# TODO: Attach the socketio server to the web app
-# Example: sio.attach(app)
-
+#keep star for now to allow all connections
+sio = socketio.AsyncServer(cors_allowed_origins="*") 
+#init web app
+app = web.Application() 
+#server io connected to app
+sio.attach(app) 
 
 # Basic health check endpoint - keep this for server monitoring
 async def handle_ping(request: Any) -> Any:
@@ -33,6 +24,7 @@ async def handle_ping(request: Any) -> Any:
 @sio.event
 async def connect(sid: str, environ: Dict[str, Any]) -> None:
     """Handle client connections - called when a frontend connects to the server"""
+    
     # TODO: Print a message showing which client connected
     # TODO: You might want to initialize game state here
     pass
