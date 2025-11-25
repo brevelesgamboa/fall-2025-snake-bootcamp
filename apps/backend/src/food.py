@@ -13,16 +13,15 @@ class Food:
     def __init__(self, game: Any) -> None:
         """Initialize food at a random position on the grid."""
         self.game = game
-
-        # Randomly place food somewhere on the grid
-        # Make sure it's within the grid boundaries
         self.position: Tuple[int, int] = (
             random.randint(0, game.grid_width - 1),
             random.randint(0, game.grid_height - 1),
         )
-
-        # Track whether the food has been eaten (used for respawning logic)
         self.eaten: bool = False
+        # ensure initial spawn is not on the snake (or previous food)
+        self.eaten = True
+        self.spawn_food()
+
 
     def spawn_food(self) -> None:
         """

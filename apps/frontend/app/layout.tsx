@@ -4,8 +4,8 @@ import { Header } from "../components/Header";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "fall-2025-snake-bootcamp",
-  description: "CSAI Fall 2025 Snake Bootcamp Project",
+  title: "AI Snake",
+  description: "Snake Bootcamp Project",
 };
 
 // basic root layout setup

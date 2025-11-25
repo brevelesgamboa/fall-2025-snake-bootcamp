@@ -13,7 +13,7 @@ export const Header = () => {
     <header className="flex items-center justify-between h-full px-4 md:px-6 p-4 bg-card border-b border-primary border-b-[1px] relative">
       <Link href="/" className="px-4 no-underline">
         <span className="text-xl font-bold text-primary">
-          fall-2025-snake-bootcamp
+          AI Snake
         </span>
       </Link>
       {/* Desktop Nav */}
